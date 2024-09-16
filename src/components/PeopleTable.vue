@@ -16,7 +16,7 @@ const people = Array.from({ length: 20 }, () => ({
 const activePerson = ref("");
 
 function toggleActivePerson(id: string) {
-  activePerson.value = activePerson.value === id ? "" : id;
+  activePerson.value = id;
 }
 </script>
 <template>
@@ -39,7 +39,8 @@ function toggleActivePerson(id: string) {
           @click="toggleActivePerson(person.id)"
           :key="person.id"
           :person="person"
-          :activeId="activePerson"
+          :active="activePerson === person.id"
+          v-memo="[activePerson === person.id]"
         />
       </tbody>
     </table>

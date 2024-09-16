@@ -9,7 +9,7 @@ interface Props {
     color: string;
     image: string;
   };
-  activeId: string;
+  active: boolean;
 }
 const props = defineProps<Props>();
 
@@ -21,7 +21,7 @@ function consoleReRender() {
   <tr
     class="cursor-pointer"
     :class="{
-      'bg-primary text-white': activeId === props.person.id,
+      'bg-primary text-white': active,
     }"
   >
     <td>
