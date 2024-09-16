@@ -1,0 +1,2 @@
+- only 2 rows are re-rendered when selecting a new row (the newly selected and the de-selected)
+- this is confirmed by the behavior of the console logs
